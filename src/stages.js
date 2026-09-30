@@ -58,9 +58,9 @@ import { BOSSES, WAVES } from './data.js';
 export const STAGES = Object.freeze({
     FOREST: Object.freeze({
         id: 'forest',
-        name: 'Whisperwood',
+        name: 'Bois-Murmure',
         icon: '🌲',
-        description: 'The default forest. Balanced enemy mix, bosses on schedule.',
+        description: 'La forêt de départ. Ennemis variés et équilibrés, boss à heure fixe.',
         background: { fill: '#1a1a2e', gridAlpha: 0.04 },
         musicStyle: 'forest',
         poolOverrides: {},
@@ -69,9 +69,9 @@ export const STAGES = Object.freeze({
     }),
     CRYPT: Object.freeze({
         id: 'crypt',
-        name: 'Sunken Crypt',
+        name: 'Crypte engloutie',
         icon: '🪦',
-        description: 'Darker. More ranged casters. The Reaper rushes you at 4:00.',
+        description: 'Plus sombre. Davantage de lanceurs de sorts à distance. La Faucheuse fonce sur vous à 4:00.',
         background: { fill: '#0c0816', gridAlpha: 0.025 },
         musicStyle: 'crypt',
         // Bias spawns: more mages and illusionists, fewer melee chasers.
@@ -115,9 +115,9 @@ export const STAGES = Object.freeze({
     // ----------------------------------------------------------------------
     TUNDRA: Object.freeze({
         id: 'tundra',
-        name: 'Frozen Tundra',
+        name: 'Toundra gelée',
         icon: '❄️',
-        description: 'Slippery snow (-10% speed), tougher beasts (+20% HP), creeping cold.',
+        description: 'Neige glissante (-10 % de vitesse), bêtes plus coriaces (+20 % PV), froid envahissant.',
         background: { fill: '#2a3a4f', gridAlpha: 0.05 },
         musicStyle: 'forest',
         poolOverrides: {

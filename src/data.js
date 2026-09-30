@@ -25,9 +25,9 @@
 export const WEAPONS = {
     WHIP: {
         id: 'whip',
-        name: 'Whip',
+        name: 'Fouet',
         icon: '⚔️',
-        description: 'Lashes to both sides of the hero. Evolves: full circle sweep.',
+        description: 'Fouette des deux côtés du héros. Évolution : balayage à 360°.',
         baseDamage: 20,
         baseCooldown: 1.5,
         baseRange: 90,
@@ -35,13 +35,13 @@ export const WEAPONS = {
         piercing: false,
         type: 'melee',
         evolveLevel: 5,
-        evolveName: 'Bloody Sweep'
+        evolveName: 'Balayage sanglant'
     },
     MAGIC_WAND: {
         id: 'magic_wand',
-        name: 'Magic Wand',
+        name: 'Baguette magique',
         icon: '🔮',
-        description: 'Homing bolt that seeks the closest foe. Evolves: triple volley.',
+        description: 'Projectile à tête chercheuse visant l’ennemi le plus proche. Évolution : triple salve.',
         baseDamage: 15,
         baseCooldown: 1.2,
         baseRange: 320,
@@ -51,13 +51,13 @@ export const WEAPONS = {
         speed: 420,
         homing: true,
         evolveLevel: 5,
-        evolveName: 'Seeker Storm'
+        evolveName: 'Tempête chercheuse'
     },
     KNIFE: {
         id: 'knife',
-        name: 'Knife',
+        name: 'Couteau',
         icon: '🗡️',
-        description: 'Piercing blade thrown forward. Evolves: wide 5-blade fan.',
+        description: 'Lame perforante lancée vers l’avant. Évolution : éventail de 5 lames.',
         baseDamage: 12,
         baseCooldown: 0.4,
         baseRange: 420,
@@ -66,7 +66,7 @@ export const WEAPONS = {
         type: 'projectile',
         speed: 620,
         evolveLevel: 5,
-        evolveName: 'Blade Fan',
+        evolveName: 'Éventail de lames',
         // iter-14 evolution micro-tweak: the fan also gets a flat +10% crit
         // chance on top of the player's current critChance roll. Picked up
         // by Weapon._rollCrit when the weapon `isEvolved()`.
@@ -74,9 +74,9 @@ export const WEAPONS = {
     },
     ORBIT: {
         id: 'orbit',
-        name: 'Orbiter',
+        name: 'Orbiteur',
         icon: '💫',
-        description: 'Spinning shards circle the hero. Evolves: two rings spinning.',
+        description: 'Des éclats tournent autour du héros. Évolution : deux anneaux en rotation.',
         baseDamage: 16,
         baseCooldown: 0.4, // used as "tick" for damage re-hit window
         baseRange: 120, // orbit radius
@@ -84,15 +84,15 @@ export const WEAPONS = {
         piercing: true,
         type: 'orbit',
         evolveLevel: 5,
-        evolveName: 'Twin Halo',
+        evolveName: 'Double halo',
         // iter-14: evolved Twin Halo also boosts shard damage by +10%.
         evolveDamageMult: 1.1
     },
     LIGHTNING: {
         id: 'lightning',
-        name: 'Lightning',
+        name: 'Foudre',
         icon: '⚡',
-        description: 'Smites a random foe. Lv3+ chains. Evolves: storm burst.',
+        description: 'Frappe un ennemi au hasard. Enchaîne dès le niv. 3. Évolution : déferlement d’orage.',
         baseDamage: 35,
         baseCooldown: 3.0,
         baseRange: 420,
@@ -101,15 +101,15 @@ export const WEAPONS = {
         chain: true,
         chainCount: 3,
         evolveLevel: 5,
-        evolveName: 'Thunder Call',
+        evolveName: 'Appel du tonnerre',
         // iter-14: evolved Thunder Call rolls a +15% crit on the strikes.
         evolveBonusCrit: 0.15
     },
     MINE: {
         id: 'mine',
-        name: 'Area Mine',
+        name: 'Mine de zone',
         icon: '💣',
-        description: 'Drops a mine that arms and detonates. Evolves: double-stack.',
+        description: 'Pose une mine qui s’arme puis explose. Évolution : double charge.',
         baseDamage: 45,
         baseCooldown: 2.2,
         baseRange: 100, // explosion radius
@@ -118,13 +118,13 @@ export const WEAPONS = {
         type: 'mine',
         fuse: 1.2,
         evolveLevel: 5,
-        evolveName: 'Cluster Mine'
+        evolveName: 'Mine à fragmentation'
     },
     GARLIC: {
         id: 'garlic',
-        name: 'Garlic',
+        name: 'Ail',
         icon: '🧄',
-        description: 'Damaging aura around the hero.',
+        description: 'Aura qui blesse autour du héros.',
         baseDamage: 5,
         baseCooldown: 0.2,
         baseRange: 110,
@@ -135,9 +135,9 @@ export const WEAPONS = {
     // --- v2.4 additions ---------------------------------------------------
     FROST_NOVA: {
         id: 'frost_nova',
-        name: 'Frost Nova',
+        name: 'Nova de givre',
         icon: '❄️',
-        description: 'Expanding ring of ice slows foes caught in the burst. Evolves: twin-ring.',
+        description: 'Un anneau de glace s’étend et ralentit les ennemis touchés. Évolution : double anneau.',
         baseDamage: 28,
         baseCooldown: 3.2,
         baseRange: 200, // blast radius
@@ -147,13 +147,13 @@ export const WEAPONS = {
         slowPct: 0.5,
         slowDuration: 1.2,
         evolveLevel: 5,
-        evolveName: 'Glacial Cascade'
+        evolveName: 'Cascade glaciale'
     },
     SOUL_DRAIN: {
         id: 'soul_drain',
-        name: 'Soul Drain',
+        name: 'Drain d’âme',
         icon: '🩸',
-        description: 'Beam that tethers the nearest foe and heals on tick. Evolves: dual-lash.',
+        description: 'Rayon qui s’accroche à l’ennemi le plus proche et soigne à chaque tick. Évolution : double lien.',
         baseDamage: 8,
         baseCooldown: 0.25, // tick rate
         baseRange: 260,
@@ -162,13 +162,13 @@ export const WEAPONS = {
         type: 'drain',
         lifestealPct: 0.25,
         evolveLevel: 5,
-        evolveName: 'Vampiric Chord'
+        evolveName: 'Accord vampirique'
     },
     BOOMERANG: {
         id: 'boomerang',
         name: 'Boomerang',
         icon: '🪃',
-        description: 'Flung forward, homes back to the hero. Evolves: twin arc.',
+        description: 'Lancé vers l’avant, il revient vers le héros. Évolution : double arc.',
         baseDamage: 18,
         baseCooldown: 1.1,
         baseRange: 340,
@@ -178,7 +178,7 @@ export const WEAPONS = {
         speed: 380,
         boomerang: true,
         evolveLevel: 5,
-        evolveName: 'Twin Arc',
+        evolveName: 'Double arc',
         // iter-14: Twin Arc fires 5% faster than its base cooldown formula.
         evolveCooldownMult: 0.95
     },
@@ -191,7 +191,7 @@ export const WEAPONS = {
         id: 'retro_blaster',
         name: 'Retro Blaster',
         icon: '👾',
-        description: '8-bit arcade beam. Pierces forward in a tight burst. Evolves: triple beam.',
+        description: 'Rayon d’arcade 8 bits. Transperce vers l’avant en rafale serrée. Évolution : triple rayon.',
         baseDamage: 14,
         baseCooldown: 0.5,
         baseRange: 480,
@@ -200,7 +200,7 @@ export const WEAPONS = {
         type: 'projectile',
         speed: 700,
         evolveLevel: 5,
-        evolveName: 'Pixel Storm'
+        evolveName: 'Tempête de pixels'
     }
 };
 
@@ -210,72 +210,72 @@ export const WEAPONS = {
 export const PASSIVES = {
     MAX_HP: {
         id: 'max_hp',
-        name: 'Vitality',
+        name: 'Vitalité',
         icon: '❤️',
-        description: 'Max HP +20%',
+        description: 'PV max +20 %',
         effect: { maxHpMult: 0.2 }
     },
     RECOVERY: {
         id: 'recovery',
-        name: 'Recovery',
+        name: 'Récupération',
         icon: '💚',
-        description: 'Regen +0.5 HP/s',
+        description: 'Régénération +0,5 PV/s',
         effect: { hpRegen: 0.5 }
     },
     ARMOR: {
         id: 'armor',
-        name: 'Armor',
+        name: 'Armure',
         icon: '🛡️',
-        description: 'Damage taken -1',
+        description: 'Dégâts subis -1',
         effect: { armor: 1 }
     },
     MOVESPEED: {
         id: 'movespeed',
-        name: 'Swiftness',
+        name: 'Célérité',
         icon: '👟',
-        description: 'Move speed +10%',
+        description: 'Vitesse de déplacement +10 %',
         effect: { speedMult: 0.1 }
     },
     MIGHT: {
         id: 'might',
-        name: 'Might',
+        name: 'Puissance',
         icon: '💪',
-        description: 'Damage +10%',
+        description: 'Dégâts +10 %',
         effect: { damageMult: 0.1 }
     },
     AREA: {
         id: 'area',
-        name: 'Area',
+        name: 'Zone',
         icon: '📏',
-        description: 'Weapon range +10%',
+        description: 'Portée des armes +10 %',
         effect: { areaMult: 0.1 }
     },
     COOLDOWN: {
         id: 'cooldown',
-        name: 'Cooldown',
+        name: 'Recharge',
         icon: '⏱️',
-        description: 'Attack speed +8%',
+        description: 'Vitesse d’attaque +8 %',
         effect: { cooldownMult: -0.08 }
     },
     MAGNET: {
         id: 'magnet',
-        name: 'Magnet',
+        name: 'Aimant',
         icon: '🧲',
-        description: 'Pickup range +25%',
+        description: 'Portée de ramassage +25 %',
         effect: { magnetMult: 0.25 }
     },
     GROWTH: {
         id: 'growth',
-        name: 'Growth',
+        name: 'Croissance',
         icon: '📈',
-        description: 'XP gain +10%',
+        description: 'Gain d’XP +10 %',
         effect: { expMult: 0.1 }
     },
     LUCK: {
         id: 'luck',
-        name: 'Luck',
+        name: 'Chance',
         icon: '🍀',
-        description: 'Crit chance +5%',
+        description: 'Chance de critique +5 %',
         effect: { critChance: 0.05 }
     },
     // --- iter-14 passives -------------------------------------------------
@@ -288,23 +288,23 @@ export const PASSIVES = {
     // immortal even with five stacks.
     DODGE: {
         id: 'dodge',
-        name: 'Evasion',
+        name: 'Esquive',
         icon: '💨',
-        description: 'Dodge chance +5%',
+        description: 'Chance d’esquive +5 %',
         effect: { dodgeChance: 0.05 }
     },
     MAGNET_PLUS: {
         id: 'magnet_plus',
-        name: 'Pickup Magnet+',
+        name: 'Aimant+',
         icon: '🧲',
-        description: 'Pickup range +35%',
+        description: 'Portée de ramassage +35 %',
         effect: { magnetMult: 0.35 }
     },
     DAMAGE_REDUCTION: {
         id: 'damage_reduction',
-        name: 'Bulwark',
+        name: 'Rempart',
         icon: '🛡️',
-        description: 'Incoming damage -8%',
+        description: 'Dégâts reçus -8 %',
         effect: { damageReduction: 0.08 }
     }
 };
@@ -321,7 +321,7 @@ export const PASSIVES = {
 export const ENEMIES = {
     BAT: {
         id: 'bat',
-        name: 'Bat',
+        name: 'Chauve-souris',
         archetype: 'chaser',
         hp: 15,
         speed: 110,
@@ -343,7 +343,7 @@ export const ENEMIES = {
     },
     SKELETON: {
         id: 'skeleton',
-        name: 'Skeleton',
+        name: 'Squelette',
         archetype: 'chaser',
         hp: 25,
         speed: 95,
@@ -354,7 +354,7 @@ export const ENEMIES = {
     },
     WOLF: {
         id: 'wolf',
-        name: 'Dire Wolf',
+        name: 'Loup sinistre',
         archetype: 'dasher',
         dasher: true,
         dashSpeed: 320,
@@ -383,7 +383,7 @@ export const ENEMIES = {
     },
     GHOST: {
         id: 'ghost',
-        name: 'Ghost',
+        name: 'Fantôme',
         archetype: 'chaser',
         hp: 20,
         speed: 130,
@@ -396,7 +396,7 @@ export const ENEMIES = {
     // --- New archetypes --------------------------------------------------
     MAGE: {
         id: 'mage',
-        name: 'Cultist',
+        name: 'Cultiste',
         archetype: 'ranged',
         ranged: true,
         firingRange: 360,
@@ -426,7 +426,7 @@ export const ENEMIES = {
     },
     SLIMELING: {
         id: 'slimeling',
-        name: 'Slimeling',
+        name: 'Petit slime',
         archetype: 'chaser',
         hp: 18,
         speed: 105,
@@ -438,7 +438,7 @@ export const ENEMIES = {
     // --- v2.4 additions: bomber (self-destructs) + illusionist (clone) ---
     BOMBER: {
         id: 'bomber',
-        name: 'Bomber',
+        name: 'Kamikaze',
         archetype: 'bomber',
         bomber: true,
         fuseRange: 80, // begins countdown when within this distance
@@ -454,7 +454,7 @@ export const ENEMIES = {
     },
     ILLUSIONIST: {
         id: 'illusionist',
-        name: 'Illusionist',
+        name: 'Illusionniste',
         archetype: 'illusionist',
         illusionist: true,
         cloneCooldown: 5.5,
@@ -478,7 +478,7 @@ ENEMIES.SLIME.splitInto = 'slimeling';
 export const BOSSES = {
     REAPER: {
         id: 'reaper',
-        name: 'The Reaper',
+        name: 'La Faucheuse',
         hp: 2500,
         speed: 80,
         damage: 40,
@@ -491,7 +491,7 @@ export const BOSSES = {
     },
     VOID_LORD: {
         id: 'void_lord',
-        name: 'Void Lord',
+        name: 'Seigneur du Néant',
         hp: 6000,
         speed: 60,
         damage: 60,
@@ -505,7 +505,7 @@ export const BOSSES = {
     // --- v2.4 mid/late bosses --------------------------------------------
     NECROMANCER: {
         id: 'necromancer',
-        name: 'Necromancer',
+        name: 'Nécromancien',
         hp: 4200,
         speed: 70,
         damage: 50,
@@ -518,7 +518,7 @@ export const BOSSES = {
     },
     CHRONO_LICH: {
         id: 'chrono_lich',
-        name: 'Chrono Lich',
+        name: 'Liche temporelle',
         hp: 10000,
         speed: 55,
         damage: 75,
@@ -536,7 +536,7 @@ export const BOSSES = {
     // achievement registry can reference her by id without a special case.
     ICE_QUEEN: {
         id: 'ice_queen',
-        name: 'The Ice Queen',
+        name: 'La Reine des glaces',
         hp: 6200,
         speed: 55,
         damage: 60,
@@ -561,63 +561,63 @@ export const BOSSES = {
 // back to the final entry once gameTime exceeds the last window.
 // ---------------------------------------------------------------------------
 export const WAVES = [
-    { from: 0, to: 30, pool: ['bat', 'zombie'], spawnMult: 1.0, label: 'Opening' },
-    { from: 30, to: 60, pool: ['bat', 'zombie', 'skeleton'], spawnMult: 1.1, label: 'Wave 2' },
+    { from: 0, to: 30, pool: ['bat', 'zombie'], spawnMult: 1.0, label: 'Ouverture' },
+    { from: 30, to: 60, pool: ['bat', 'zombie', 'skeleton'], spawnMult: 1.1, label: 'Vague 2' },
     {
         from: 60,
         to: 90,
         pool: ['zombie', 'skeleton', 'mage'],
         spawnMult: 1.15,
-        label: 'Cultists'
+        label: 'Cultistes'
     },
     {
         from: 90,
         to: 120,
         pool: ['skeleton', 'wolf', 'ghost', 'mage'],
         spawnMult: 1.2,
-        label: 'Pack'
+        label: 'Meute'
     },
     {
         from: 120,
         to: 180,
         pool: ['wolf', 'ghost', 'slime', 'mage', 'bomber'],
         spawnMult: 1.3,
-        label: 'Splitters'
+        label: 'Diviseurs'
     },
     {
         from: 180,
         to: 240,
         pool: ['wolf', 'golem', 'ghost', 'slime', 'bomber'],
         spawnMult: 1.4,
-        label: 'Vanguard'
+        label: 'Avant-garde'
     },
     {
         from: 240,
         to: 300,
         pool: ['golem', 'ghost', 'slime', 'mage', 'illusionist'],
         spawnMult: 1.5,
-        label: 'Pressure'
+        label: 'Pression'
     },
     {
         from: 300,
         to: 420,
         pool: ['wolf', 'golem', 'ghost', 'slime', 'mage', 'bomber', 'illusionist'],
         spawnMult: 1.6,
-        label: 'Post-Reaper'
+        label: 'Après la Faucheuse'
     },
     {
         from: 420,
         to: 600,
         pool: ['golem', 'slime', 'mage', 'ghost', 'wolf', 'illusionist'],
         spawnMult: 1.75,
-        label: 'Escalation'
+        label: 'Escalade'
     },
     {
         from: 600,
         to: Infinity,
         pool: ['golem', 'slime', 'mage', 'ghost', 'wolf', 'skeleton', 'bomber', 'illusionist'],
         spawnMult: 2.0,
-        label: 'Endgame'
+        label: 'Fin de partie'
     }
 ];
 
@@ -628,130 +628,130 @@ export const WAVES = [
 export const ACHIEVEMENTS = [
     {
         id: 'first_blood',
-        name: 'First Blood',
+        name: 'Premier sang',
         icon: '🗡️',
-        description: 'Defeat your first foe.',
+        description: 'Vaincre votre premier ennemi.',
         check: (c) => c.game.kills >= 1
     },
     {
         id: 'slayer_100',
         name: 'Centurion',
         icon: '🎯',
-        description: 'Defeat 100 foes in a single run.',
+        description: 'Vaincre 100 ennemis en une seule partie.',
         check: (c) => c.game.kills >= 100
     },
     {
         id: 'slayer_1000',
-        name: 'Legion Breaker',
+        name: 'Briseur de légions',
         icon: '🏆',
-        description: 'Defeat 1000 foes in a single run.',
+        description: 'Vaincre 1000 ennemis en une seule partie.',
         check: (c) => c.game.kills >= 1000
     },
     {
         id: 'boss_slayer',
-        name: 'Reaper Down',
+        name: 'Faucheuse terrassée',
         icon: '☠️',
-        description: 'Defeat the Reaper mid-boss.',
+        description: 'Vaincre la Faucheuse (boss intermédiaire).',
         check: (c) => !!c.run.bossesDefeated?.reaper
     },
     {
         id: 'void_breaker',
-        name: 'Void Breaker',
+        name: 'Briseur du Néant',
         icon: '🌌',
-        description: 'Defeat the Void Lord.',
+        description: 'Vaincre le Seigneur du Néant.',
         check: (c) => !!c.run.bossesDefeated?.void_lord
     },
     {
         id: 'survive_5min',
-        name: 'Five-Minute Flame',
+        name: 'Flamme de 5 minutes',
         icon: '⏱️',
-        description: 'Survive 5 minutes.',
+        description: 'Survivre 5 minutes.',
         check: (c) => c.game.gameTime >= 300
     },
     {
         id: 'survive_10min',
-        name: 'Ten-Minute Titan',
+        name: 'Titan de 10 minutes',
         icon: '🔥',
-        description: 'Survive 10 minutes.',
+        description: 'Survivre 10 minutes.',
         check: (c) => c.game.gameTime >= 600
     },
     {
         id: 'survive_15min',
-        name: 'Quarter Hour',
+        name: 'Quart d’heure',
         icon: '⌛',
-        description: 'Survive 15 minutes.',
+        description: 'Survivre 15 minutes.',
         check: (c) => c.game.gameTime >= 900
     },
     {
         id: 'weapon_max',
-        name: 'Mastery',
+        name: 'Maîtrise',
         icon: '🌟',
-        description: 'Reach max level on any weapon.',
+        description: 'Amener une arme au niveau maximum.',
         check: (c) => !!c.run.maxedWeapon
     },
     {
         id: 'untouchable',
-        name: 'Untouchable',
+        name: 'Intouchable',
         icon: '🛡️',
-        description: 'Avoid damage for 60 straight seconds.',
+        description: 'Ne subir aucun dégât pendant 60 secondes d’affilée.',
         check: (c) => (c.run.longestUnhit || 0) >= 60
     },
     {
         id: 'xp_hoarder',
-        name: 'XP Hoarder',
+        name: 'Collectionneur d’XP',
         icon: '💎',
-        description: 'Collect 100 XP orbs in a run.',
+        description: 'Ramasser 100 orbes d’XP en une partie.',
         check: (c) => (c.run.orbsCollected || 0) >= 100
     },
     {
         id: 'level_20',
-        name: 'High Roller',
+        name: 'Gros joueur',
         icon: '📈',
-        description: 'Reach hero level 20.',
+        description: 'Atteindre le niveau 20.',
         check: (c) => c.game.player?.level >= 20
     },
     // --- v2.4 additions ---------------------------------------------------
     {
         id: 'speed_demon',
-        name: 'Speed Demon',
+        name: 'Démon de vitesse',
         icon: '💨',
-        description: 'Defeat the Void Lord in under 5 minutes of real time.',
+        description: 'Vaincre le Seigneur du Néant en moins de 5 minutes de temps réel.',
         check: (c) =>
             !!c.run.bossesDefeated?.void_lord && (c.run.realSecondsToVoidLord || Infinity) < 300
     },
     {
         id: 'no_hit_boss',
-        name: 'Flawless Duel',
+        name: 'Duel parfait',
         icon: '🕊️',
-        description: 'Defeat any boss without taking damage during the fight.',
+        description: 'Vaincre un boss sans subir de dégât pendant le combat.',
         check: (c) => !!c.run.noHitBoss
     },
     {
         id: 'max_all',
-        name: 'Max All',
+        name: 'Tout au max',
         icon: '👑',
-        description: 'Reach max level on every weapon slot in a single run.',
+        description: 'Amener toutes les armes équipées au niveau maximum en une partie.',
         check: (c) => (c.run.maxedWeaponCount || 0) >= 6
     },
     {
         id: 'early_evolve',
-        name: 'Early Evolve',
+        name: 'Évolution précoce',
         icon: '🔮',
-        description: 'Evolve a weapon before the 7-minute mark.',
+        description: 'Faire évoluer une arme avant la 7e minute.',
         check: (c) => !!c.run.evolvedBefore?.sevenMin
     },
     {
         id: 'triple_build',
-        name: 'Triple Threat',
+        name: 'Triple menace',
         icon: '🎲',
-        description: 'Finish 3 distinct weapon-composition runs (lifetime).',
+        description: 'Terminer 3 parties avec des combinaisons d’armes différentes (au total).',
         check: (c) => (c.game.save?.totals?.uniqueBuilds || 0) >= 3
     },
     {
         id: 'zen_5min',
-        name: 'Zen Walker',
+        name: 'Marcheur zen',
         icon: '🧘',
-        description: 'Survive 5 minutes without picking up a single passive.',
+        description: 'Survivre 5 minutes sans prendre un seul bonus passif.',
         check: (c) => c.game.gameTime >= 300 && (c.run.passivesPicked || 0) === 0
     },
     // --- iter-20: hidden / easter-egg achievements ------------------------
@@ -760,18 +760,18 @@ export const ACHIEVEMENTS = [
     // `hidden: true` flag is read by ui.js to gate the description preview.
     {
         id: 'konami_code',
-        name: 'Konami Code',
+        name: 'Code Konami',
         icon: '🎮',
-        description: 'Found the legendary cheat. Unlocks the Retro Blaster.',
+        description: 'Vous avez trouvé le code légendaire. Débloque le Retro Blaster.',
         hidden: true,
         check: (c) => !!c.run.konamiCode
     },
     {
         id: 'speedrun_plus',
-        name: 'Speedrunner Plus',
+        name: 'Speedrunner+',
         icon: '⚡',
         description:
-            'Cleared a major boss in under 5 minutes of real time. Unlocks a sprite trail.',
+            'Vaincre un boss majeur en moins de 5 minutes de temps réel. Débloque une traînée lumineuse.',
         hidden: true,
         // The tracker sets `run.fastBossClear` whenever any boss falls in
         // under 300 wall-clock seconds. Reaper on the Crypt stage (4:00
@@ -782,10 +782,10 @@ export const ACHIEVEMENTS = [
     },
     {
         id: 'pacifist_provoked',
-        name: 'Pacifist Provoked',
+        name: 'Pacifiste provoqué',
         icon: '🕊️',
         description:
-            'Survived 60 seconds with zero kills — let the world do the work. Unlocks a special boss title.',
+            'Survivre 60 secondes sans éliminer personne — laissez le monde faire le travail. Débloque un titre de boss spécial.',
         hidden: true,
         check: (c) => (c.run.pacifistTimer || 0) >= 60 && c.game.kills === 0
     }

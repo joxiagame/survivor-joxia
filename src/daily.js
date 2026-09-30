@@ -79,7 +79,7 @@ export function dailyChallenge(dateStr) {
         seed: seed >>> 0,
         stage,
         bossOffset,
-        label: `Daily ${date}`
+        label: `Défi ${date}`
     };
 }
 
@@ -273,11 +273,11 @@ export function buildShareText(entry, history) {
         .toString()
         .padStart(2, '0');
     const stageLabel =
-        entry.stage === 'crypt' ? 'Crypt' : entry.stage === 'tundra' ? 'Tundra' : 'Forest';
-    const result = entry.won ? '🏆 WIN' : `⏱ ${mm}:${ss}`;
+        entry.stage === 'crypt' ? 'Crypte' : entry.stage === 'tundra' ? 'Toundra' : 'Forêt';
+    const result = entry.won ? '🏆 VICTOIRE' : `⏱ ${mm}:${ss}`;
     const lines = [
-        `Survivor Daily ${entry.date} · ${stageLabel}`,
-        `${result} · Lv.${entry.level || 1} · ${entry.kills || 0} kills`,
+        `Survivor — Défi du jour ${entry.date} · ${stageLabel}`,
+        `${result} · Niv.${entry.level || 1} · ${entry.kills || 0} éliminations`,
         padded,
         'https://ricardo-foundry.github.io/canvas-vampire-survivors/'
     ];

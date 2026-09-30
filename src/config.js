@@ -67,10 +67,10 @@ export const GameState = Object.freeze({
 });
 
 export const Difficulty = Object.freeze({
-    EASY: { id: 'easy', label: 'Easy', hpMult: 0.75, dmgMult: 0.75, spawnMult: 0.8 },
+    EASY: { id: 'easy', label: 'Facile', hpMult: 0.75, dmgMult: 0.75, spawnMult: 0.8 },
     NORMAL: { id: 'normal', label: 'Normal', hpMult: 1.0, dmgMult: 1.0, spawnMult: 1.0 },
-    HARD: { id: 'hard', label: 'Hard', hpMult: 1.3, dmgMult: 1.25, spawnMult: 1.25 },
-    NIGHTMARE: { id: 'nightmare', label: 'Nightmare', hpMult: 1.75, dmgMult: 1.5, spawnMult: 1.6 }
+    HARD: { id: 'hard', label: 'Difficile', hpMult: 1.3, dmgMult: 1.25, spawnMult: 1.25 },
+    NIGHTMARE: { id: 'nightmare', label: 'Cauchemar', hpMult: 1.75, dmgMult: 1.5, spawnMult: 1.6 }
 });
 
 export const STORAGE_KEY = 'vs_clone_save_v2';

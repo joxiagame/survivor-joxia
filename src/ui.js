@@ -373,7 +373,7 @@ export class UI {
                   ).padStart(2, '0')}`;
             const ws = Array.isArray(r.weapons) && r.weapons.length ? r.weapons.join(' + ') : '—';
             const nh = r.noHit ? `<span class="no-hit">${t('noHit')}</span>` : '';
-            return `<div class="hs-row wide"><span>${i + 1}</span><span>${mm}:${ss}</span><span>Lv.${r.level ?? 1}</span><span>${r.kills ?? 0}</span><span class="weapons">${ws}</span><span>${dstr}</span><span>${nh}</span></div>`;
+            return `<div class="hs-row wide"><span>${i + 1}</span><span>${mm}:${ss}</span><span>Niv.${r.level ?? 1}</span><span>${r.kills ?? 0}</span><span class="weapons">${ws}</span><span>${dstr}</span><span>${nh}</span></div>`;
         };
         const renderSpeedRow = (r, i) => {
             const ms = r.timeMs || 0;
@@ -393,7 +393,7 @@ export class UI {
                       d.getDate()
                   ).padStart(2, '0')}`;
             const ws = Array.isArray(r.weapons) && r.weapons.length ? r.weapons.join(' + ') : '—';
-            return `<div class="hs-row wide"><span>${i + 1}</span><span>${mm}:${ss}.${ml}</span><span>Lv.${r.level ?? 1}</span><span>${r.kills ?? 0}</span><span class="weapons">${ws}</span><span>${dstr}</span></div>`;
+            return `<div class="hs-row wide"><span>${i + 1}</span><span>${mm}:${ss}.${ml}</span><span>Niv.${r.level ?? 1}</span><span>${r.kills ?? 0}</span><span class="weapons">${ws}</span><span>${dstr}</span></div>`;
         };
         m.innerHTML = `
             <div class="overlay-card leaderboard-card">
@@ -446,7 +446,7 @@ export class UI {
                 window.dispatchEvent(ev);
             } catch (err) {
                 console.warn('[ui] Import JSON parse failed', err);
-                ta.value = 'Invalid JSON: ' + err.message;
+                ta.value = 'JSON invalide : ' + err.message;
             }
         });
     }
@@ -597,10 +597,10 @@ export class UI {
                     ? lvl >= CONFIG.WEAPON_MAX_LEVEL
                     : lvl >= CONFIG.PASSIVE_MAX_STACK;
             const label = isMaxed
-                ? ' (MAXED)'
+                ? ' (MAX)'
                 : lvl > 0
-                  ? ` (${up.type === 'weapon' ? 'Lv.' : 'x'}${lvl + 1})`
-                  : ' (New!)';
+                  ? ` (${up.type === 'weapon' ? 'Niv.' : 'x'}${lvl + 1})`
+                  : ' (Nouveau !)';
             const willEvolve =
                 up.type === 'weapon' &&
                 !isMaxed &&
@@ -612,7 +612,7 @@ export class UI {
             if (isMaxed) div.classList.add('maxed');
             div.setAttribute(
                 'aria-label',
-                `${up.data.name}${label}. ${up.data.description}${willEvolve ? '. Evolves into ' + up.data.evolveName : ''}`
+                `${up.data.name}${label}. ${up.data.description}${willEvolve ? '. Évolue en ' + up.data.evolveName : ''}`
             );
             div.innerHTML = `
                 <div class="name">${up.data.icon} ${up.data.name}${label}</div>
@@ -1125,9 +1125,16 @@ function selectRow(key, value, values) {
         <label class="settings-row">
             <span>${t(key)}</span>
             <select data-key="${key}">
-                ${values.map((v) => `<option value="${v}" ${v === value ? 'selected' : ''}>${v}</option>`).join('')}
+                ${values.map((v) => `<option value="${v}" ${v === value ? 'selected' : ''}>${optionLabel(v)}</option>`).join('')}
             </select>
         </label>`;
+}
+
+// Joxia : libellé lisible d'une option (« hard » → « Difficile », « fr » → « Français »).
+function optionLabel(v) {
+    const k = 'opt_' + v;
+    const label = t(k);
+    return label === k ? v : label;
 }
 
 function checkboxRow(key, value) {

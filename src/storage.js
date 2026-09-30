@@ -48,7 +48,7 @@ const DEFAULT_SAVE = {
         colorblind: false,
         musicEnabled: true,
         damageNumbers: true,
-        locale: 'en',
+        locale: 'fr', // Joxia : français par défaut
         stage: 'forest',
         // iter-13: global mute toggle, persisted so refresh keeps the choice.
         muted: false,

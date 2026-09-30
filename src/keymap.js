@@ -63,9 +63,10 @@ export const KEYMAP_ACTIONS = Object.freeze([
  * path always returns a deep clone.
  */
 export const DEFAULT_KEYMAP = Object.freeze({
-    up: Object.freeze(['w', 'arrowup']),
+    // Joxia : Z et Q ajoutés pour les claviers AZERTY (ZQSD).
+    up: Object.freeze(['w', 'z', 'arrowup']),
     down: Object.freeze(['s', 'arrowdown']),
-    left: Object.freeze(['a', 'arrowleft']),
+    left: Object.freeze(['a', 'q', 'arrowleft']),
     right: Object.freeze(['d', 'arrowright']),
     pause: Object.freeze(['escape', 'p']),
     help: Object.freeze(['h', '?']),
@@ -214,15 +215,15 @@ export function keyLabel(rawKey) {
         case 'arrowright':
             return '→';
         case 'escape':
-            return 'Esc';
+            return 'Échap';
         case ' ':
-            return 'Space';
+            return 'Espace';
         case 'enter':
-            return 'Enter';
+            return 'Entrée';
         case 'tab':
             return 'Tab';
         case 'shift':
-            return 'Shift';
+            return 'Maj';
         case 'control':
             return 'Ctrl';
         case 'alt':

@@ -147,7 +147,13 @@ export class Game {
 
         // Save + settings
         this.save = loadSave();
-        setLocale(this.save.settings.locale || 'en');
+        // Joxia : passage unique en français pour les sauvegardes créées avant
+        // l'ajout de la langue (elles avaient « en » par défaut).
+        if (!this.save.settings.joxiaFr) {
+            this.save.settings.joxiaFr = true;
+            if (this.save.settings.locale === 'en') this.save.settings.locale = 'fr';
+        }
+        setLocale(this.save.settings.locale || 'fr');
         if (this.save.settings.colorblind) document.body.classList.add('cb-mode');
 
         // Audio + input + UI
@@ -319,7 +325,7 @@ export class Game {
             /* swallow — boot-time miss is fine */
         }
         this._flushAchievementToasts?.();
-        this._announce('Cheat code unlocked. Retro Blaster available.');
+        this._announce('Code secret débloqué. Retro Blaster disponible.');
     }
 
     /** Toggle a global mute and persist so a refresh keeps the choice. */
@@ -328,7 +334,7 @@ export class Game {
         this.save.settings.muted = next;
         saveSave(this.save);
         this.audio.setMuted(next);
-        this._announce(next ? 'Audio muted' : 'Audio unmuted');
+        this._announce(next ? 'Son coupé' : 'Son rétabli');
     }
 
     /** Open the help overlay; close it if it's already open. */
@@ -656,7 +662,7 @@ export class Game {
         this.speedrunRng = new SeededRng(CONFIG.SPEEDRUN_SEED);
         this.speedrunStart = performance.now();
         this.start();
-        this._announce('Speedrun started — deterministic seed.');
+        this._announce('Speedrun lancé — graine déterministe.');
     }
 
     /**
@@ -673,7 +679,7 @@ export class Game {
         this.speedrunRng = new SeededRng(this.dailyChallenge.seed);
         this.speedrunStart = performance.now();
         this.start();
-        this._announce(`Daily Challenge ${this.dailyChallenge.date} — ${this.stageId}.`);
+        this._announce(`Défi du jour ${this.dailyChallenge.date} — ${this.stageId}.`);
     }
 
     /** Apply the daily challenge's bossOffset to a `getBossesFor` result. */
@@ -1406,7 +1412,7 @@ export class Game {
             // hurt single-pulse and the boss triple so the player can
             // tell what just happened from the haptic alone.
             this.haptics?.levelUp();
-            this._announce(`Level ${this.player.level}! Choose an upgrade.`);
+            this._announce(`Niveau ${this.player.level} ! Choisissez une amélioration.`);
             // iter-15: notify the tutorial state machine — its "level up"
             // step waits for exactly this event.
             if (this.tutorial?.active) {
@@ -1569,7 +1575,7 @@ export class Game {
         // iter-19: triple-pulse vibration so the player feels the warning
         // even with audio off / sleeve-pocket play.
         this.haptics?.bossSpawn();
-        this._announce(`Boss incoming: ${bossDef.name || bossDef.id}`);
+        this._announce(`Boss en approche : ${bossDef.name || bossDef.id}`);
     }
 
     _flushAchievementToasts() {
@@ -1578,7 +1584,7 @@ export class Game {
             this.ui.showAchievementToast(ach);
             this.audio.achievement();
             this.effects.achievement();
-            this._announce(`Achievement unlocked: ${ach.name}. ${ach.description}`);
+            this._announce(`Succès débloqué : ${ach.name}. ${ach.description}`);
             // iter-20: harmless emoji-rain celebration the first time the
             // player crosses the 15-minute Survivor threshold. We trigger
             // off the achievement-just-unlocked event rather than polling

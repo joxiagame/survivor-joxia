@@ -1,7 +1,7 @@
 /**
  * @module i18n
- * @description Minimal localisation layer. Currently ships English and
- * 简体中文; new locales drop in by adding a key to `STRINGS` and a PR. All
+ * @description Minimal localisation layer. Currently ships English,
+ * Français (ajout Joxia, langue par défaut) and 简体中文; new locales drop in by adding a key to `STRINGS` and a PR. All
  * lookups fall back to English then to the raw key, so a typo never crashes.
  *
  * Dependencies: none.
@@ -131,7 +131,141 @@ const STRINGS = {
         remap_right: 'Move right',
         remap_pause: 'Pause / resume',
         remap_help: 'Toggle help',
-        remap_mute: 'Mute audio'
+        remap_mute: 'Mute audio',
+        // Joxia : libellés des options des menus déroulants.
+        opt_easy: 'Easy',
+        opt_normal: 'Normal',
+        opt_hard: 'Hard',
+        opt_nightmare: 'Nightmare',
+        opt_fr: 'Français',
+        opt_en: 'English',
+        opt_zh: '简体中文'
+    },
+    // Joxia : traduction française (langue par défaut sur Joxia Games).
+    fr: {
+        title: 'SURVIVOR',
+        subtitle: 'Roguelite façon Vampire Survivors',
+        start: 'Lancer une partie',
+        continue: 'Continuer',
+        settings: 'Paramètres',
+        howToPlay: 'Comment jouer',
+        move: 'ZQSD / WASD / flèches pour se déplacer',
+        autoAttack: 'Les armes attaquent seules les ennemis proches',
+        survive: 'Survivez le plus longtemps possible !',
+        level: 'NIVEAU',
+        xp: 'XP',
+        time: 'TEMPS',
+        kills: 'ÉLIMINATIONS',
+        hp: 'PV',
+        gameover: 'VOUS ÊTES MORT',
+        finalTime: 'Survie',
+        finalKills: 'Éliminations',
+        finalLevel: 'Niveau',
+        retry: 'Rejouer',
+        mainMenu: 'Menu principal',
+        paused: 'PAUSE',
+        resume: 'Reprendre',
+        quit: 'Retour au menu',
+        masterVolume: 'Volume général',
+        sfxVolume: 'Volume des effets',
+        musicVolume: 'Volume de la musique',
+        musicEnabled: 'Musique',
+        difficulty: 'Difficulté',
+        showFps: 'Afficher les FPS',
+        screenShake: 'Tremblement de l’écran',
+        reducedMotion: 'Animations réduites',
+        colorblind: 'Contraste élevé (daltonisme)',
+        locale: 'Langue',
+        close: 'Fermer',
+        resetData: 'Effacer toutes les données',
+        confirmReset: 'Cela effacera les succès et les meilleurs scores. Continuer ?',
+        chooseUpgrade: 'Choisissez une amélioration',
+        highScore: 'Record',
+        highScores: 'Meilleurs scores',
+        wave: 'Vague',
+        bossIncoming: 'UN BOSS APPROCHE',
+        achievementUnlocked: 'Succès débloqué',
+        date: 'Date',
+        noHighScores: 'Aucune partie enregistrée pour l’instant.',
+        achievements: 'Succès',
+        viewAchievements: 'Voir les succès',
+        totals: 'Totaux',
+        speedrun: 'Speedrun',
+        leaderboard: 'Classement',
+        export: 'Exporter',
+        import: 'Importer',
+        paste: 'Coller le JSON',
+        splits: 'Temps intermédiaires',
+        noHit: 'Sans dégât',
+        weapons: 'Armes',
+        speedrunMode: 'Mode speedrun',
+        newPb: 'Nouveau record personnel !',
+        stage: 'Carte',
+        chooseStage: 'Choisissez une carte',
+        dailyChallenge: 'Défi du jour',
+        dailyToday: 'Défi d’aujourd’hui',
+        shareDaily: 'Partager le résultat',
+        copied: 'Copié dans le presse-papiers',
+        copyManual: 'Sélectionnez et copiez manuellement',
+        damageNumbers: 'Afficher les dégâts',
+        touchButtonScale: 'Taille des boutons tactiles',
+        viewStreak: 'Voir la série',
+        dailyStreak: 'Série de défis du jour',
+        currentStreak: 'Série actuelle',
+        bestStreak: 'Meilleure série',
+        last14Days: '14 derniers jours',
+        noStreakYet: 'Aucun défi du jour joué pour l’instant — essayez celui d’aujourd’hui !',
+        howToPlayBtn: 'Comment jouer',
+        helpTitle: 'Raccourcis clavier',
+        hotkeyHint: 'Astuce : P/Échap pause · M muet · H aide',
+        helpKeyMove: 'Se déplacer',
+        helpKeyPause: 'Pause / reprendre',
+        helpKeyMute: 'Couper le son',
+        helpKeyHelp: 'Afficher / masquer l’aide',
+        helpKeyLanguage: 'Changer de langue',
+        helpKeySettings: 'Paramètres',
+        helpKeyConfirm: 'Valider / tirer',
+        howToTitle: 'Comment jouer',
+        howToBody1:
+            'Vos armes attaquent toutes seules. Déplacez-vous avec ZQSD, WASD ou les flèches.',
+        howToBody2:
+            'Ramassez les orbes vertes pour gagner de l’XP. À chaque niveau, choisissez une amélioration.',
+        howToBody3: 'Tenez assez longtemps et un boss apparaît toutes les quelques minutes.',
+        howToBody4: 'P ou Échap pour la pause, M pour couper le son, H pour revoir cette liste.',
+        gotIt: 'Compris',
+        tutorialOffer: 'Bienvenue ! Suivre un petit tutoriel en 5 étapes ?',
+        tryTutorial: 'Tutoriel',
+        skipTutorial: 'Passer',
+        tutorialSkipHint: 'Échap pour passer.',
+        tutorialDone: 'Tutoriel terminé !',
+        replayLastRun: 'Revoir la dernière partie',
+        noReplay: 'Aucun replay enregistré — terminez d’abord une partie.',
+        replaySpeed: 'Vitesse',
+        replayPlaying: 'Replay (commandes désactivées)',
+        criticalFlash: 'Flash d’écran sur coup critique',
+        vibration: 'Vibrations (mobile)',
+        customizeControls: 'Personnaliser les touches',
+        remapHint: 'Cliquez sur une ligne, puis appuyez sur une touche pour l’associer.',
+        pressAnyKey: 'Appuyez sur une touche…',
+        keymapConflict: 'Touches en conflit',
+        resetDefaults: 'Valeurs par défaut',
+        cancel: 'Annuler',
+        save: 'Enregistrer',
+        remap_up: 'Haut',
+        remap_down: 'Bas',
+        remap_left: 'Gauche',
+        remap_right: 'Droite',
+        remap_pause: 'Pause / reprendre',
+        remap_help: 'Afficher / masquer l’aide',
+        remap_mute: 'Couper le son',
+        // Libellés des options des menus déroulants (Paramètres).
+        opt_easy: 'Facile',
+        opt_normal: 'Normal',
+        opt_hard: 'Difficile',
+        opt_nightmare: 'Cauchemar',
+        opt_fr: 'Français',
+        opt_en: 'English',
+        opt_zh: '简体中文'
     },
     zh: {
         title: '幸存者',
@@ -254,10 +388,10 @@ const STRINGS = {
     }
 };
 
-let current = 'en';
+let current = 'fr';
 
 // Map BCP-47-ish identifiers to <html lang> values. Only what we actually ship.
-const HTML_LANG = { en: 'en', zh: 'zh-Hans' };
+const HTML_LANG = { fr: 'fr', en: 'en', zh: 'zh-Hans' };
 
 export function setLocale(loc) {
     if (STRINGS[loc]) current = loc;

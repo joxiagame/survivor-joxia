@@ -26,34 +26,34 @@
 export const TUTORIAL_STEPS = [
     {
         id: 'move',
-        title: 'Step 1 / 5 — Move',
-        body: 'Use WASD or arrow keys to walk. On touch devices, drag the joystick on the lower-left.',
+        title: 'Étape 1 / 5 — Se déplacer',
+        body: 'Utilisez ZQSD, WASD ou les flèches pour marcher. Sur écran tactile, faites glisser le joystick en bas à gauche.',
         // Counted as done once the player has held a non-zero move vector for
         // ~0.4 s of game time. Prevents a stuck-key from advancing instantly.
         thresholdSeconds: 0.4
     },
     {
         id: 'autoAttack',
-        title: 'Step 2 / 5 — Auto-Attack',
-        body: "You don't fire manually. Stand near an enemy and your starter weapon swings on its own.",
+        title: 'Étape 2 / 5 — Attaque automatique',
+        body: 'Pas besoin de tirer : approchez-vous d’un ennemi et votre arme de départ frappe toute seule.',
         thresholdSeconds: 1.5
     },
     {
         id: 'pickupExp',
-        title: 'Step 3 / 5 — Pick up XP',
-        body: 'Defeated enemies drop green orbs. Walk over one to gain experience.',
+        title: 'Étape 3 / 5 — Ramasser l’XP',
+        body: 'Les ennemis vaincus lâchent des orbes vertes. Marchez dessus pour gagner de l’expérience.',
         thresholdOrbs: 1
     },
     {
         id: 'levelUp',
-        title: 'Step 4 / 5 — Level Up',
-        body: 'Filling the XP bar opens the upgrade menu. Pick one — it sticks for the whole run.',
+        title: 'Étape 4 / 5 — Monter de niveau',
+        body: 'Remplir la barre d’XP ouvre le menu des améliorations. Choisissez-en une — elle reste pour toute la partie.',
         thresholdLevelUps: 1
     },
     {
         id: 'pause',
-        title: 'Step 5 / 5 — Pause',
-        body: 'Press P or Esc to pause. Esc closes most overlays too. Press it now to finish.',
+        title: 'Étape 5 / 5 — Pause',
+        body: 'Appuyez sur P ou Échap pour mettre en pause. Échap ferme aussi la plupart des fenêtres. Appuyez maintenant pour terminer.',
         thresholdPauses: 1
     }
 ];
