@@ -987,6 +987,8 @@ export class Game {
         } else {
             recordHighScore(this.save, entry);
         }
+        // Joxia : éliminations de la partie envoyées au classement du hub (pas pendant un replay)
+        if (!this.replayActive && typeof window !== 'undefined' && window.joxiaScore) window.joxiaScore(this.kills);
         accumulateTotals(this.save, {
             kills: this.kills,
             gameTime: this.gameTime,
